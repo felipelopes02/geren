@@ -1,0 +1,27 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened>
+      <!-- Título da Sidebar -->
+      <div class="sidenav-title">
+        <h2>M/I</h2>
+      </div>
+  
+      <mat-nav-list>
+        <a mat-list-item>Home</a>
+        <!-- Item de Estoque com submenu -->
+        <div style="width: 100%;">
+          <a mat-list-item (click)="toggleEstoque()">Estoque</a>
+          <div *ngIf="estoqueOpen" class="submenu">
+            <a mat-list-item (click)="navigateToMedicamentos()">Medicamentos</a>
+            <a mat-list-item (click)="navigateToInsumos()">Insumos</a>
+          </div>
+        </div>
+        <a mat-list-item>Funcionarios</a>
+        <a mat-list-item>Transações</a>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <ng-content></ng-content> <!-- Conteúdo principal da página -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

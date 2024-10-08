@@ -1,0 +1,47 @@
+.sidenav-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ajusta os itens para começar no topo */
+    background-color: #7c87ec; /* Azul claro */
+  }
+  
+  .sidenav-title {
+    text-align: center;
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    font-weight: bold;
+    flex: 0 0 auto; /* Mantém o título no topo e não estica */
+    margin-top: 30px;
+  }
+  
+  mat-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os itens */
+    flex-grow: 1; /* Permite que a lista ocupe o espaço restante */
+    align-items: center; /* Alinha os itens ao centro horizontalmente */
+  }
+  
+  mat-nav-list a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px 0;
+    width: 100%; /* Garante que os links ocupem todo o espaço horizontal */
+    text-align: center; /* Centraliza o texto dos links */
+  }
+
+  .submenu a {
+    /* Recuo para indicar hierarquia no submenu */
+    width: 100%;
+  }
+  
+
+  
+  
