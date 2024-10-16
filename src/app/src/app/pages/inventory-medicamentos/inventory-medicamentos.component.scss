@@ -58,9 +58,11 @@
   
   /* Tabela */
   .mat-elevation-z8 {
+    margin-top: 15px;
     width: 100%;
     background-color: #fff;
     overflow: hidden;
+    padding: 0px 10px;
   }
   
   .mat-header-cell {
@@ -100,7 +102,7 @@
     margin-bottom: 25px; /* Aumentar o espaço vertical após cada campo */
   
     .mat-form-field-infix {
-      padding: 20px 0; /* Aumentar padding para fazer os campos mais "gordos" */
+      padding: 20px 20px; /* Aumentar padding para fazer os campos mais "gordos" */
     }
   }
   
@@ -117,7 +119,7 @@
   
   .acoes{
     margin-top: 0px !important; /* Aumentar espaço acima do botão */
-    padding: 0px 0px !important; /* Mais padding no botão para um aspecto mais robusto */
+    padding: 5px 5px !important; /* Mais padding no botão para um aspecto mais robusto */
     border-radius: 20px; /* Bordas arredondadas */
   }
 

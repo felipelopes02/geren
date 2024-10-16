@@ -47,4 +47,8 @@ export class NavBarComponent {
     this.router.navigate(['/inventory-insumos']);
   }
 
+  navigateToHome() {
+    this.router.navigate(['/home']);
+  }
+
 }
