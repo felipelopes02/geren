@@ -22,4 +22,9 @@ export class InsumosService {
   createInsumo(insumo: any): Observable<any> {
     return this.http.post<any>('https://ad1d-200-192-114-19.ngrok-free.app/api/insumo/register', insumo);
   }
+
+  updateInsumo(id: string, insumo: any): Observable<any> {
+    const url = `https://ad1d-200-192-114-19.ngrok-free.app/api/insumo/${id}`;
+    return this.http.put<any>(url, insumo);
+  }
 }
