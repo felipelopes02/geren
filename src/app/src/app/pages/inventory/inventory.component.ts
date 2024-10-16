@@ -133,5 +133,54 @@ export class InventoryComponent implements OnInit {
       this.dataSource.data = formattedData;
     });
   }
-
-}
+  saveEdit() {
+    if (this.currentItemIndex !== null) {
+      const { nome, fornecedor, qnt, endereco, vencimento, identificador } = this.newItem;
+  
+      const updatedItem = {
+        produto: nome,
+        fornecedor: fornecedor,
+        quantidade: qnt,
+        contato: endereco,
+        vencimento: vencimento,
+      };
+  
+      const id = this.newItem.identificador;
+  
+      this.insumosService.updateInsumo(identificador, updatedItem).subscribe(
+        () => {
+          this.fetchData(); 
+          this.closeModal(); 
+          this.resetForm();
+        },
+        (error) => {
+          console.error('Erro ao atualizar o insumo:', error);
+        }
+      );
+    }
+  }
+    
+  create() {
+    const { nome, fornecedor, qnt, endereco, vencimento } = this.newItem;
+  
+    const newItem = {
+      produto: nome,
+      fornecedor: fornecedor,
+      quantidade: qnt,
+      contato: endereco,
+      vencimento: vencimento,
+    };
+  
+    this.insumosService.createInsumo(newItem).subscribe(
+      () => {
+        console.log('Insumo criado com sucesso!');
+        this.fetchData();
+        this.closeModal();
+        this.resetForm();
+      },
+      (error) => {
+        console.error('Erro ao criar o insumo:', error);
+      }
+    );
+  }
+  }

@@ -85,7 +85,7 @@
   <div class="modal-content" style="background-color: white; padding: 20px; border-radius: 8px; max-width: 600px; width: 100%; ">
     <h2>{{ isEditing ? 'Editar Item' : 'Criar Novo Item' }}</h2>
     <form (ngSubmit)="submitNewItem()">
-      <mat-form-field style="width: 100%; margin-top: 20px;">
+      <mat-form-field style="width: 100%; margin-top: 20px;" *ngIf="!isEditing">
         <input class="modal-input" matInput type="text" [(ngModel)]="newItem.identificador" name="identificador" placeholder="Identificador" required>
       </mat-form-field>
 
@@ -112,7 +112,7 @@
       <!-- Botões do modal -->
       <div class="actions" style="text-align: right; margin-top: 20px;">
         <button mat-button type="button" (click)="closeModal()">Cancelar</button>
-        <button mat-raised-button color="primary" type="submit">{{ isEditing ? 'Salvar Alterações' : 'Salvar Item' }}</button>
+        <button mat-raised-button color="primary" type="submit" (click)="isEditing? saveEdit(): create()">{{ isEditing ? 'Salvar Alterações' : 'Salvar Item' }}</button>
       </div>
     </form>
   </div>
