@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../services/auth.service'; // Importar o AuthService
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   standalone: true,
-  imports: [FormsModule, CommonModule], // Adicionar o HttpClientModule aqui
+  imports: [FormsModule, CommonModule],
 })
 export class LoginComponent {
   email: string = '';
@@ -18,17 +18,13 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit(): void {
-    // Verifica se o email é válido
     if (this.email.includes('@')) {
-      // Chama o serviço de login passando email e senha
       this.authService.login(this.email, this.password).subscribe({
-        next: (response) => {
-          // Supondo que a resposta tenha um campo 'success' para validar o login
-          if (response.success) {
-            alert('Login bem-sucedido!');
+        next: (response) => {if (response.userId > 0) {
+            alert(response.status);
             this.router.navigate(['/inventory-insumos']);
           } else {
-            alert('Credenciais inválidas. Tente novamente.');
+            alert(response.status);
           }
         },
         error: (error) => {
