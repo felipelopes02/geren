@@ -1,34 +1,43 @@
 <div class="navbar"></div>
-<div class="login-container">
-  <h2>Login</h2>
-  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-    <!-- Campo de email com validação -->
-    <div class="form-group">
-      <input 
-        type="email" 
-        id="email" 
-        placeholder="Email" 
-        [(ngModel)]="email" 
-        name="email" 
-        required 
-        #emailModel="ngModel" 
-        email>
-        
-      <!-- Popup de erro se o formato do email for inválido -->
-      <div *ngIf="emailModel.invalid && (emailModel.dirty || emailModel.touched)" class="error-message">
-        <span *ngIf="emailModel.errors">Email é obrigatório.</span>
-        <span *ngIf="emailModel.errors">Formato de email inválido.</span>
+
+<div class="main-container">
+  <div class="login-container">
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <!-- Campo de email com validação -->
+      <div class="form-group">
+        <input 
+          type="email" 
+          id="email" 
+          placeholder="Email" 
+          [(ngModel)]="email" 
+          name="email" 
+          required 
+          #emailModel="ngModel" 
+          email>
+          
+        <!-- Popup de erro se o formato do email for inválido -->
+        <div *ngIf="emailModel.invalid && (emailModel.dirty || emailModel.touched)" class="error-message">
+          <span *ngIf="emailModel.errors">Email é obrigatório.</span>
+          <span *ngIf="emailModel.errors">Formato de email inválido.</span>
+        </div>
       </div>
-    </div>
 
-    <!-- Campo de senha -->
-    <input type="password" id="password" placeholder="Senha" [(ngModel)]="password" name="password" required>
+      <!-- Campo de senha -->
+      <input type="password" id="password" placeholder="Senha" [(ngModel)]="password" name="password" required>
 
-    <!-- Botão de login, desabilitado se o formulário for inválido -->
-    <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
+      <!-- Botão de login, desabilitado se o formulário for inválido -->
+      <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
 
-    <div class="signup">
-      Novo usuário? <a routerLink="/register">Cadastrar</a>
-    </div>
-  </form>
+      <div class="signup">
+        Novo usuário? <a routerLink="/register">Cadastrar</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Nova div colorida à direita -->
+  <div class="right-section"></div>
+  
+  <!-- Imagem do doutor -->
+  <img src="doc.png" class="doctor-image" alt="Doctor Image">
 </div>
