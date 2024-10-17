@@ -41,6 +41,24 @@
     /* Recuo para indicar hierarquia no submenu */
     width: 100%;
   }
+
+  .menu-item-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between the icon and text */
+  }
+  
+  .menu-item svg {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .menu-item span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px; /* Keep font size */
+  }
   
 
   
