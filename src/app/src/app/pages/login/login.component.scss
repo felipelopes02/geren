@@ -92,3 +92,7 @@ button:hover {
   z-index: 10; /* Garante que a imagem fique sobre as outras camadas */
   max-width: 200px; /* Ajusta o tamanho da imagem conforme necessário */
 }
+
+a{
+  cursor: pointer;
+}
