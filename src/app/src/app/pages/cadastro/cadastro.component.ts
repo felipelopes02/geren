@@ -4,14 +4,15 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 
+
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-cadastro',
   standalone: true,
   imports: [FormsModule, CommonModule],
+  templateUrl: './cadastro.component.html',
+  styleUrl: './cadastro.component.scss'
 })
-export class LoginComponent {
+export class CadastroComponent {
   email: string = '';
   password: string = '';
 
@@ -35,9 +36,5 @@ export class LoginComponent {
     } else {
       alert('Por favor, insira um email válido.');
     }
-  }
-
-  navigateToCadastro() {
-    this.router.navigate(['/cadastro']);
   }
 }

@@ -29,10 +29,10 @@
       <!-- Botão de login, desabilitado se o formulário for inválido -->
       <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
 
+      <div class="signup">
+        Novo usuário? <a routerLink="/register">Cadastrar</a>
+      </div>
     </form>
-    <div class="signup">
-      Novo usuário? <a (click)="navigateToCadastro()" routerLink="/cadastro">Cadastrar</a>
-    </div>
   </div>
 
   <!-- Nova div colorida à direita -->
