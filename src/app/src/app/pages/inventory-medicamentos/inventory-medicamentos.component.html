@@ -16,7 +16,7 @@
       </mat-form-field>
   
       <!-- Botão de Criar Novo Item -->
-      <button mat-raised-button style="margin-top: 20px; float: right; color: #7c87ec;" (click)="openModal()">Criar Novo Item</button>
+      <button mat-raised-button style="margin-top: 20px; float: right; color: #5f8fea;" (click)="openModal()">Criar Novo Item</button>
   
       <!-- Tabela Angular Material -->
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 custom-table" style="width: 100%;">
@@ -85,9 +85,6 @@
     <div class="modal-content" style="background-color: white; padding: 20px; border-radius: 8px; max-width: 600px; width: 100%;">
       <h2>{{ isEditing ? 'Editar Item' : 'Criar Novo Item' }}</h2>
       <form (ngSubmit)="submitNewItem()">
-        <mat-form-field style="width: 100%; margin-top: 20px;">
-          <input class="modal-input" matInput type="text" [(ngModel)]="newItem.identificador" name="identificador" placeholder="Identificador" required>
-        </mat-form-field>
   
         <mat-form-field style="width: 100%;">
           <input class="modal-input" matInput type="text" [(ngModel)]="newItem.nome" name="nome" placeholder="Nome" required>
