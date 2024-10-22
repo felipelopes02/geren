@@ -15,6 +15,7 @@ import { AuthService } from '../../services/auth.service';
 export class CadastroComponent {
   email: string = '';
   password: string = '';
+  nome: string = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -36,5 +37,9 @@ export class CadastroComponent {
     } else {
       alert('Por favor, insira um email válido.');
     }
+  }
+
+  navigateToLogin() {
+    this.router.navigate(['/login']);
   }
 }

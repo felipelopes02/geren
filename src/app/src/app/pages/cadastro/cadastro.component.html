@@ -2,10 +2,11 @@
 
 <div class="main-container">
   <div class="login-container">
-    <h2>Login</h2>
+    <h2>Cadastro</h2>
     <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
       <!-- Campo de email com validação -->
       <div class="form-group">
+        <input type="text" id="text" placeholder="Nome" [(ngModel)]="nome" name="nome" required>
         <input 
           type="email" 
           id="email" 
@@ -18,19 +19,18 @@
           
         <!-- Popup de erro se o formato do email for inválido -->
         <div *ngIf="emailModel.invalid && (emailModel.dirty || emailModel.touched)" class="error-message">
-          <span *ngIf="emailModel.errors">Email é obrigatório.</span>
-          <span *ngIf="emailModel.errors">Formato de email inválido.</span>
         </div>
       </div>
 
       <!-- Campo de senha -->
       <input type="password" id="password" placeholder="Senha" [(ngModel)]="password" name="password" required>
+      <input style="margin-bottom: 5%;" type="password" id="password" placeholder="Confirme sua senha" [(ngModel)]="password" name="Confirme sua senha" required>
 
       <!-- Botão de login, desabilitado se o formulário for inválido -->
-      <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
+      <button type="submit" [disabled]="!loginForm.form.valid">Cadastrar</button>
 
       <div class="signup">
-        Novo usuário? <a routerLink="/register">Cadastrar</a>
+        Ja possui login ? <a (click)="navigateToLogin()" routerLink="/login">Fazer Login</a>
       </div>
     </form>
   </div>
@@ -39,5 +39,5 @@
   <div class="right-section"></div>
   
   <!-- Imagem do doutor -->
-  <img src="doc.png" class="doctor-image" alt="Doctor Image">
+  <img src="doc2.png" class="doctor-image" alt="Doctor Image">
 </div>
